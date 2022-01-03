@@ -27,6 +27,7 @@
              "name": "Python: Current File (Integrated Terminal)",
              "type": "python",
              "request": "launch",
+             "cwd":"${fileDirname}",
              "program": "${file}",
              "console": "integratedTerminal",
         }
