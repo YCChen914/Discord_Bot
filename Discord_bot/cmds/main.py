@@ -30,5 +30,15 @@ class Main(Cog_Extension): # 物件導向 繼承類別
         embed.set_footer(text="謝謝觀看")
         await ctx.send(embed=embed)
 
+    @commands.command() # 需要權限
+    async def sayd(self, ctx, *, msg): # 訊息複誦 刪除我所說的訊息、複誦我所說的訊息
+        await ctx.message.delete() # 將我們所說的刪掉
+        await ctx.send(msg) # 送出我們所說的訊息
+
+    @commands.command() # 需要權限
+    async def clean(self, ctx, num : int): # 清除訊息
+        await ctx.channel.purge(limit=num+1) # 刪除上限 num +1 加我們打的那行指令
+    # 可以做跟時間有關的 有滿多變化的~
+
 def setup(Bot):
     Bot.add_cog(Main(Bot))
