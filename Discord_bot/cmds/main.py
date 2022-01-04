@@ -18,5 +18,6 @@ class Main(Cog_Extension): # 物件導向 繼承類別
     @commands.command()
     async def hi(self, ctx): # 打招呼回覆
         await ctx.send('你好呀~~~')
+        
 def setup(Bot):
     Bot.add_cog(Main(Bot))

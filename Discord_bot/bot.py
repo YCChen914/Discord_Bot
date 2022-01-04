@@ -22,18 +22,6 @@ Bot = commands.Bot(command_prefix = 'Bot ', intents = intents) # 呼叫機器人
 async def on_ready(): # 判斷機器人是否連線
     print(">>Bot is Online<<")
 
-@Bot.event # 事件
-async def on_member_join(member): # 判斷是否有人員加入
-    channel = Bot.get_channel(int[jdata['Bot_message']]) # bot_message 伺服器
-    await channel.send(f'{member} 加入了伺服器！') # send 一定要加 await
-    print(f'{member} join!')
-
-@Bot.event # 事件
-async def on_member_remove(member): # 判斷是否有人員離開
-    channel = Bot.get_channel(int[jdata['Bot_message']]) # bot_message 伺服器
-    await channel.send(f'{member} 離開了伺服器！') # send 一定要加 await
-    print(f'{member} leave!')
-
 @Bot.command()
 async def load(ctx, extension):
     Bot.load_extension(f'cmds.{extension}')
